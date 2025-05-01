@@ -1,0 +1,85 @@
+:root {
+  --pri_color: white;
+  --outline_color: black;
+}
+
+html {
+  background-color: var(--pri_color);
+}
+
+body {
+  outline: 0px solid var(--outline_color);
+}
+
+.game {
+  outline: 1.5px solid var(--outline_color);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hud {
+  outline: 1.5px solid var(--outline_color);
+}
+
+.primary.hud {
+  outline: 1.5px solid var(--outline_color);
+  grid-area: 1 / 5 / 2 / 6;
+}
+
+.secondary.hud {
+  outline: 1.5px solid var(--outline_color);
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.playable.area {
+  outline: 1.5px solid var(--outline_color);
+  grid-area: 2 / 2 / 5 / 5;
+}
+
+.effects {
+  outline: 1.5px solid var(--outline_color);
+  grid-area: 2 / 5 / 5 / 6;
+}
+
+.overlay {
+  outline: 1.5px solid var(--outline_color);
+  grid-area: 5 / 5 / 6 / 6;
+}
+
+.inventory {
+  outline: 1.5px solid var(--outline_color);
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+.inventory {
+  grid-area: 5 / 1 / 6 / 2;
+  /* transform: translateX(-100%); */
+  transition: transform 0.3s ease, 0.3s ease;
+}
+
+.inventory.inventory-open {
+  /* transform: translateX(0); */
+  grid-area: 2 / 1 / 6 / 2;
+}
+
+.menu {
+  outline: 2.5px solid var(--outline_color);
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.75s ease, opacity 0.3s ease;
+  background-color: gainsboro;
+}
+
+.menu.menu-open {
+  transform: translateX(0);
+  opacity: 1;
+  display: absolute;
+  z-index: 1;
+}
